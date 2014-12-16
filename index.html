@@ -7,11 +7,17 @@
 	
 	<div id="request" class="show">
 		<label>Address:</label>
-		<input id="serviceAddress" type="text"/>
+		<input id="serviceAddress" type="url" />
+        <label>UserId:</label>
+		<input id="userId" type="text" />
+        <label>Data:</label>
+        <textarea id="reqData"></textarea>
 	</div>
 	<input type="button" id="btnSend" value="Send Request">
 	<div id="response" class="hide">
 		<label>Address : <span id="responseAddress"></span></label>
+        <label>UserId : <span id="responseUserId"></span></label>
+        <label>Data : <span id="responseData"></span></label>
 	</div>
 
 	<script type="text/javascript" src="index.js"></script> 

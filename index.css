@@ -1,3 +1,7 @@
+input[type="text"] {
+    font-family: monospace;
+}
+
 div.hide {
     visibility: hidden;
 }

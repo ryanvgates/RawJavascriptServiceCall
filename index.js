@@ -1,10 +1,20 @@
-function sendRequest(){
-	var response = document.getElementById('response');
-    response.className = 'show';
-    var responseAddress = document.getElementById('responseAddress');
-    responseAddress.innerHTML = serviceAddress.value;
-};
+function RequestInfo(address, userId, data) {
+    "use strict";
+    this.address = address;
+    this.userId = userId;
+    this.data = data;
+}
 
-document.addEventListener('DOMContentLoaded', function(event) {
-	document.getElementById('btnSend').addEventListener('click', sendRequest, false);
+function sendRequest(RequestInfo) {
+    "use strict";
+    document.getElementById('response').className = 'show';
+    document.getElementById('responseAddress').innerHTML = RequestInfo.address;
+    document.getElementById('responseUserId').innerHTML = RequestInfo.userId;
+    document.getElementById('responseData').innerHTML = RequestInfo.data;
+}
+
+document.addEventListener('DOMContentLoaded', function (event) {
+    "use strict";
+    var requestInfo = new RequestInfo(serviceAddress.value, userId.value, reqData.value);
+	document.getElementById('btnSend').addEventListener('click', sendRequest(RequestInfo), false);
 });
