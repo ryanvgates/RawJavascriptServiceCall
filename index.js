@@ -15,6 +15,6 @@ function sendRequest(RequestInfo) {
 
 document.addEventListener('DOMContentLoaded', function (event) {
     "use strict";
-    var requestInfo = new RequestInfo(serviceAddress.value, userId.value, reqData.value);
-	document.getElementById('btnSend').addEventListener('click', sendRequest(RequestInfo), false);
+    var requestInfo = new RequestInfo(document.getElementById('serviceAddress').value, document.getElementById('userId').value, document.getElementById('reqData').value);
+	document.getElementById('btnSend').addEventListener('click', function () {sendRequest(RequestInfo); }, false);
 });
