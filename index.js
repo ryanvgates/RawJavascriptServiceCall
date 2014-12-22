@@ -5,16 +5,17 @@ function RequestInfo(address, userId, data) {
     this.data = data;
 }
 
-function sendRequest(RequestInfo) {
+var requestInfo = new RequestInfo(document.getElementById('serviceAddress').value, document.getElementById('userId').value, document.getElementById('reqData').value);
+
+function sendRequest(request) {
     "use strict";
     document.getElementById('response').className = 'show';
-    document.getElementById('responseAddress').innerHTML = RequestInfo.address;
-    document.getElementById('responseUserId').innerHTML = RequestInfo.userId;
-    document.getElementById('responseData').innerHTML = RequestInfo.data;
+    document.getElementById('responseAddress').innerHTML = request.address;
+    document.getElementById('responseUserId').innerHTML = request.userId;
+    document.getElementById('responseData').innerHTML = request.data;
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
     "use strict";
-    var requestInfo = new RequestInfo(document.getElementById('serviceAddress').value, document.getElementById('userId').value, document.getElementById('reqData').value);
-	document.getElementById('btnSend').addEventListener('click', function () {sendRequest(RequestInfo); }, false);
+	document.getElementById('btnSend').addEventListener('click', function () {sendRequest(requestInfo); }, false);
 });
